@@ -3,7 +3,9 @@
 
 <section class="section">
   <div class="container">
+    <!--
     <nav class="level">
+
       <div class="level-left">
         <p class="level-item">
           <strong>Actions</strong>
@@ -17,10 +19,22 @@
           <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "button is-danger" %>
         </p>
       </div>
+
     </nav>
+
     <hr />
+    -->
     <div class="content">
+      <div class="is-size-4">
       <%= @post.content %>
+      </div>
+      <br>
+      <br>
+      <div class ="image container">
+      <% (0...@post.images.count).each do |image| %>
+      <%= image_tag(@post.images[image]) %>
+      <% end %>
+      </div>
     </div>
   </div>
 </section>
