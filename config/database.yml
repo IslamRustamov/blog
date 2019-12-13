@@ -1,0 +1,26 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: islam
+  password: 621998 #<-- which you have defiend while installing postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: project_development
+
+test:
+  <<: *default
+  database: project_test
+
+production:
+  <<: *default
+  database: project_production
+  username: username
+  password: <%= ENV['PROJECT_DATABASE_PASSWORD'] %>
