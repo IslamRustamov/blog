@@ -3,9 +3,8 @@
 
 <section class="section">
   <div class="container">
-    <!--
+<% if current_admin %>
     <nav class="level">
-
       <div class="level-left">
         <p class="level-item">
           <strong>Actions</strong>
@@ -19,11 +18,9 @@
           <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "button is-danger" %>
         </p>
       </div>
-
     </nav>
-
     <hr />
-    -->
+<% end %>
     <div class="content">
       <%= @post.created_at.to_date  %>
       <br>
@@ -32,9 +29,9 @@
       </div>
       <br>
       <br>
-      <div class ="image container">
+      <div class ="image container" style="width:800px; height:auto">
       <% (0...@post.images.count).each do |image| %>
-      <%= image_tag(@post.images[image]) %>
+      <%= image_tag(@post.images[image], style:'width:100%') %>
       <% end %>
       </div>
     </div>

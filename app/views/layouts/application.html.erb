@@ -29,13 +29,20 @@
 	            <span></span>
 	          </span>
 	        </div>
-          <!-- THIS IS FOR ADMIN, DONT TOUCH THAT
+          <% if current_admin %>
           <div id="navbarMenuHeroA" class="navbar-menu">
 	          <div class="navbar-end">
               <%= link_to "Create New Post", new_post_path, class:"navbar-item" %>
+              <%= link_to 'Sign out', destroy_admin_session_path, method: :delete %>
 	          </div>
 	        </div>
-          -->
+          <% else %>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+	          <div class="navbar-end">
+              <%= link_to 'Sign in', new_admin_session_path %>
+	          </div>
+	        </div>
+          <% end %>
 
           <div id="navbarMenuHeroC" class="navbar-menu">
           <div class="navbar-end">

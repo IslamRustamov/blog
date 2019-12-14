@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :update, :edit, :destroy]
 
+  before_action :authenticate_admin!, only: [:update, :edit, :destroy, :create]
+
   def index
     @posts = Post.all.order("created_at DESC")
   end
