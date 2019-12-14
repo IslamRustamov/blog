@@ -37,9 +37,16 @@
 	          </div>
 	        </div>
           <% else %>
+          <p>Note that this is only for admin</p>
           <div id="navbarMenuHeroA" class="navbar-menu">
 	          <div class="navbar-end">
               <%= link_to 'Sign in', new_admin_session_path %>
+	          </div>
+	        </div>
+          <p>Note that this is only for admin</p>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+	          <div class="navbar-end">
+              <%= link_to 'Sign up', new_admin_registration %>
 	          </div>
 	        </div>
           <% end %>
